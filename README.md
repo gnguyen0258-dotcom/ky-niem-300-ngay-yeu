@@ -1,7 +1,7 @@
 # 💖 Website Kỷ Niệm 300 Ngày Yêu • A 300-Day Love Story
 
-> **Dành tặng:** Nguyễn Hồng Ánh (Embeiuu ❤️)  
-> **Người gửi:** Trần Ngọc Nhật (Anhbeiuuu <3)  
+> **Dành tặng:**  (Embeiuu ❤️)  
+> **Người gửi:**  (Anhbeiuuu <3)  
 > **Cột mốc:** 300 Ngày Yêu (26/11/2025 — 22/09/2026)  
 > **Website trực tuyến:** [https://gnguyen0258-dotcom.github.io/ky-niem-300-ngay-yeu/](https://gnguyen0258-dotcom.github.io/ky-niem-300-ngay-yeu/)
 
