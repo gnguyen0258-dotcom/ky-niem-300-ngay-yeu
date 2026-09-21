@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kỷ Niệm 300 Ngày Yêu • A 300-Day Love Story</title>
+  <meta name="description" content="Thiệp mời và trang web kỷ niệm 300 ngày yêu lãng mạn, ngọt ngào và đầy bất ngờ.">
+  
+  <!-- Google Fonts: Great Vibes (Calligraphy), Playfair Display (Serif Luxury), Plus Jakarta Sans (Modern) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <!-- Canvas Confetti -->
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="romantic-theme">
+
+  <!-- Canvas hiệu ứng Cánh hoa hồng rơi & Đom đóm ánh sao -->
+  <canvas id="atmosphereCanvas"></canvas>
+
+  <!-- DÂY ĐÈN ĐOM ĐÓM FAIRY LIGHTS PHÁT SÁNG TRÊN CÙNG -->
+  <div class="fairy-lights-container" aria-hidden="true">
+    <div class="fairy-light bulb-gold"></div>
+    <div class="fairy-light bulb-rose"></div>
+    <div class="fairy-light bulb-warm"></div>
+    <div class="fairy-light bulb-gold"></div>
+    <div class="fairy-light bulb-rose"></div>
+    <div class="fairy-light bulb-warm"></div>
+    <div class="fairy-light bulb-gold"></div>
+    <div class="fairy-light bulb-rose"></div>
+    <div class="fairy-light bulb-warm"></div>
+    <div class="fairy-light bulb-gold"></div>
+    <div class="fairy-light bulb-rose"></div>
+    <div class="fairy-light bulb-warm"></div>
+    <div class="fairy-light bulb-gold"></div>
+    <div class="fairy-light bulb-rose"></div>
+    <div class="fairy-light bulb-warm"></div>
+  </div>
+
+  <!-- FLOATING SHORTCUT: TÙY CHỈNH NỘI DUNG (STUDIO) -->
+  <a href="customize.html" class="floating-studio-btn" id="floatingStudioBtn" title="Mở trang tùy chỉnh nội dung">
+    <i data-lucide="sliders-horizontal"></i>
+    <span>Tùy chỉnh</span>
+  </a>
+
+  <!-- FLOATING VINTAGE VINYL MUSIC PLAYER (MÁY ĐĨA THAN CỔ ĐIỂN) -->
+  <aside class="vinyl-player-widget" id="vinylWidget" aria-label="Bộ phát nhạc đĩa than">
+    <div class="vinyl-disk-wrapper" id="vinylDiskBtn" title="Bấm để Bật/Tắt nhạc lãng mạn">
+      <div class="vinyl-disk" id="vinylDisk">
+        <div class="vinyl-grooves"></div>
+        <div class="vinyl-label" id="vinylCover">
+          <span class="vinyl-center-dot"></span>
+        </div>
+      </div>
+      <div class="vinyl-arm" id="vinylArm"></div>
+    </div>
+    <div class="vinyl-info">
+      <div class="vinyl-song-title" id="songTitle">Until I Found You</div>
+      <div class="vinyl-song-artist" id="songArtist">Romantic Piano Melody</div>
+      <div class="vinyl-controls">
+        <button class="v-btn" id="prevTrackBtn" aria-label="Bài trước"><i data-lucide="skip-back"></i></button>
+        <button class="v-btn v-btn-play" id="playPauseBtn" aria-label="Phát hoặc dừng nhạc"><i data-lucide="play" id="playIcon"></i></button>
+        <button class="v-btn" id="nextTrackBtn" aria-label="Bài tiếp"><i data-lucide="skip-forward"></i></button>
+        <button class="v-btn" id="muteBtn" aria-label="Âm lượng"><i data-lucide="volume-2" id="volumeIcon"></i></button>
+      </div>
+    </div>
+  </aside>
+
+  <!-- MAIN CONTAINER -->
+  <main class="page-wrapper">
+
+    <!-- ==================================================== -->
+    <!-- PHẦN 1: THIỆP MỜI KỶ NIỆM 300 NGÀY YÊU (WAX-SEALED INVITATION) -->
+    <!-- ==================================================== -->
+    <section class="section-invitation" id="sectionInvitation">
+      <div class="invitation-intro">
+        <span class="badge-gold">✦ Special Milestone Invitation ✦</span>
+        <h1 class="invitation-main-title">Kỷ Niệm 300 Ngày Yêu</h1>
+        <p class="invitation-guide-text">Chạm vào con dấu sáp vàng son để mở phong thư bí mật dành riêng cho em 💌</p>
+      </div>
+
+      <!-- PHONG BÌ 3D CÓ CON DẤU SÁP ĐỎ -->
+      <div class="envelope-outer" id="envelopeOuter">
+        <div class="envelope-shadow"></div>
+        
+        <div class="envelope" id="envelope">
+          <!-- Nắp trên phong bì -->
+          <div class="envelope-flap" id="envelopeFlap"></div>
+          
+          <!-- Thân phong bì (túi đựng) -->
+          <div class="envelope-pocket"></div>
+
+          <!-- Con dấu sáp (Wax Seal Stamp) -->
+          <button class="wax-seal" id="waxSealBtn" aria-label="Bóc con dấu sáp mở thư">
+            <div class="wax-seal-inner">
+              <span class="wax-seal-number">300</span>
+              <span class="wax-seal-text">DAYS</span>
+            </div>
+            <div class="wax-seal-ribbon left"></div>
+            <div class="wax-seal-ribbon right"></div>
+          </button>
+
+          <!-- TỜ THƯ MỜI BÊN TRONG (BUNG RA KHI BÓC SÁP) -->
+          <article class="letter-card" id="letterCard">
+            <div class="letter-border-gold">
+              <div class="letter-header">
+                <span class="letter-crest">❦ 300 DAYS ❦</span>
+                <h2 class="letter-title" id="invitationTitle">Thư Mời Dạ Tiệc Kỷ Niệm 300 Ngày</h2>
+                <p class="letter-subtitle" id="invitationSubtitle">A Romantic 300-Day Milestone Invitation</p>
+              </div>
+
+              <div class="letter-content">
+                <p class="letter-salutation" id="invitationSalutation">Gửi công chúa nhỏ của anh,</p>
+                <p class="letter-body" id="invitationBody">
+                  Thấm thoát chúng ta đã cùng nhau trải qua tròn 300 ngày ngập tràn nụ cười, những cái ôm ấm áp và muôn vàn kỷ niệm. 
+                  Nhân dịp đặc biệt này, anh trân trọng mời em đến dự một buổi tối lãng mạn chỉ dành riêng cho hai chúng mình.
+                </p>
+
+                <!-- KHUNG CHI TIẾT BUỔI HẸN -->
+                <div class="date-details-grid">
+                  <div class="detail-card">
+                    <div class="detail-icon"><i data-lucide="calendar-heart"></i></div>
+                    <div class="detail-info">
+                      <span class="detail-label">Thời gian</span>
+                      <strong class="detail-val" id="invitationDateVal">20:00 - Tối Thứ Bảy Đặc Biệt</strong>
+                    </div>
+                  </div>
+
+                  <div class="detail-card">
+                    <div class="detail-icon"><i data-lucide="map-pin"></i></div>
+                    <div class="detail-info">
+                      <span class="detail-label">Địa điểm</span>
+                      <strong class="detail-val" id="invitationLocVal">Bàn tiệc nến & hoa bí mật bên hồ</strong>
+                    </div>
+                  </div>
+
+                  <div class="detail-card full-width">
+                    <div class="detail-icon"><i data-lucide="sparkles"></i></div>
+                    <div class="detail-info">
+                      <span class="detail-label">Dress code gợi ý</span>
+                      <strong class="detail-val" id="invitationDressVal">Chiếc váy em thích nhất (Anh sẽ mặc sơ mi trắng)</strong>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- KHU VỰC RSVP TƯƠNG TÁC (XÁC NHẬN HẸN HÒ) -->
+                <div class="rsvp-zone">
+                  <p class="rsvp-prompt">Em sẽ nhận lời hẹn hò cùng anh chứ? 💖</p>
+                  <div class="rsvp-buttons" id="rsvpBtnGroup">
+                    <button type="button" class="btn-rsvp-accept" id="btnRsvpAccept">
+                      <i data-lucide="heart"></i> <span id="rsvpAcceptLabel">Em đồng ý hẹn hò! ❤️</span>
+                    </button>
+                    <button type="button" class="btn-rsvp-reject" id="btnRsvpReject">
+                      <span id="rsvpRejectLabel">Để suy nghĩ đã 😜</span>
+                    </button>
+                  </div>
+
+                  <!-- THÔNG BÁO KHI ĐỒNG Ý -->
+                  <div class="rsvp-success-banner" id="rsvpSuccessBanner" style="display: none;">
+                    <div class="success-icon"><i data-lucide="party-popper"></i></div>
+                    <h3 class="success-title">Hẹn hò thành công! 🎉</h3>
+                    <p class="success-desc" id="rsvpSuccessMsg">Yaaaay! Anh sẽ qua đón công chúa đúng giờ nhé! Cùng bước vào không gian kỷ niệm 300 ngày nào! 🥰✨</p>
+                    <button class="btn-scroll-decor" id="btnScrollDecor">Khám Phá Không Gian Kỷ Niệm ↓</button>
+                  </div>
+                </div>
+              </div>
+
+              <div class="letter-footer">
+                <span class="letter-signature" id="invitationSignature">Forever with you, Anh Yêu ❤️</span>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================================================== -->
+    <!-- PHẦN 2: DECOR KỶ NIỆM 300 DAYS (AUTONOMOUS SCENOGRAPHY) -->
+    <!-- ==================================================== -->
+    <section class="section-decor" id="sectionDecor">
+      
+      <!-- HEADER KHÔNG GIAN KỶ NIỆM -->
+      <div class="decor-hero">
+        <div class="candle-cluster left" aria-hidden="true">
+          <div class="candle c-1"><span class="flame"></span></div>
+          <div class="candle c-2"><span class="flame"></span></div>
+          <div class="candle c-3"><span class="flame"></span></div>
+        </div>
+
+        <div class="decor-hero-text">
+          <span class="decor-badge">✦ OUR 300 DAYS ODYSSEY ✦</span>
+          <h2 class="decor-title">Hành Trình 300 Ngày Yêu</h2>
+          <p class="decor-quote" id="coupleQuote">"300 ngày bên em, từng phút giây đều là món quà ngọt ngào nhất của cuộc đời anh."</p>
+        </div>
+
+        <div class="candle-cluster right" aria-hidden="true">
+          <div class="candle c-3"><span class="flame"></span></div>
+          <div class="candle c-1"><span class="flame"></span></div>
+          <div class="candle c-2"><span class="flame"></span></div>
+        </div>
+      </div>
+
+      <!-- 1. BỘ ĐẾM THỜI GIAN REALTIME 300 NGÀY (LIVE LOVE CLOCK) -->
+      <div class="love-counter-box glass-panel">
+        <div class="counter-header">
+          <i data-lucide="clock" class="counter-icon"></i>
+          <span>CHÚNG MÌNH ĐÃ BÊN NHAU ĐƯỢC</span>
+        </div>
+        
+        <div class="counter-grid">
+          <div class="counter-card">
+            <span class="counter-num" id="counterDays">300</span>
+            <span class="counter-unit">NGÀY</span>
+          </div>
+          <div class="counter-colon">:</div>
+          <div class="counter-card">
+            <span class="counter-num" id="counterHours">00</span>
+            <span class="counter-unit">GIỜ</span>
+          </div>
+          <div class="counter-colon">:</div>
+          <div class="counter-card">
+            <span class="counter-num" id="counterMinutes">00</span>
+            <span class="counter-unit">PHÚT</span>
+          </div>
+          <div class="counter-colon">:</div>
+          <div class="counter-card highlight">
+            <span class="counter-num" id="counterSeconds">00</span>
+            <span class="counter-unit">GIÂY</span>
+          </div>
+        </div>
+
+        <div class="counter-subnote">
+          Tương đương khoảng <strong id="totalHoursText">7,200</strong> giờ tràn ngập hạnh phúc và đang tiếp tục tăng lên từng giây! 💖
+        </div>
+      </div>
+
+      <!-- 2. DÒNG THỜI GIAN CÁC CỘT MỐC (LOVE TIMELINE) -->
+      <div class="timeline-section">
+        <div class="section-title-wrap">
+          <h3 class="section-title">Dấu Ấn Kỷ Niệm 300 Ngày</h3>
+          <p class="section-desc">Những cột mốc đáng nhớ khắc sâu trong trái tim hai đứa mình</p>
+        </div>
+
+        <div class="timeline-container" id="timelineContainer">
+          <!-- Rendered dynamically from config.js -->
+        </div>
+      </div>
+
+      <!-- 3. TƯỜNG ẢNH POLAROID TREO DÂY KẸP GỖ (MEMORY GALLERY) -->
+      <div class="gallery-section">
+        <div class="section-title-wrap">
+          <h3 class="section-title">Góc Kỷ Niệm Ngọt Ngào</h3>
+          <p class="section-desc">Những khoảnh khắc đẹp được chụp lại và lưu giữ mãi với thời gian (Chạm vào ảnh để ngắm nhìn rõ hơn)</p>
+        </div>
+
+        <div class="string-lights-line" aria-hidden="true"></div>
+        <div class="polaroid-wall" id="polaroidWall">
+          <!-- Rendered dynamically from config.js -->
+        </div>
+      </div>
+
+      <!-- 4. BỨC THƯ TÂM SỰ BÍ MẬT 300 NGÀY (SECRET LOVE LETTER) -->
+      <div class="secret-letter-section">
+        <div class="section-title-wrap">
+          <h3 class="section-title">Bức Thư Gửi Riêng Em</h3>
+          <p class="section-desc">Tâm tình của người thương sau 300 ngày cùng nhau đi qua nắng mưa</p>
+        </div>
+
+        <div class="scroll-letter glass-panel" id="secretLetter">
+          <div class="letter-seal-decor">💌</div>
+          <div class="secret-letter-body" id="secretLetterContent">
+            <!-- Rendered dynamically from config.js -->
+          </div>
+          <div class="letter-sign-wrap">
+            <p class="letter-sign-date" id="letterSignDate">Kỷ niệm ngày thứ 300</p>
+            <p class="letter-sign-name" id="letterSignName">Người luôn thương em nhất đời ❤️</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 5. HỘP LỜI HỨA 300 NGÀY & ĐIỀU ƯỚC CHO TƯƠNG LAI -->
+      <div class="promises-section">
+        <div class="section-title-wrap">
+          <h3 class="section-title">4 Lời Hứa Cho 3000 Ngày Kế Tiếp</h3>
+          <p class="section-desc">Những điều anh luôn khắc cốt ghi tâm mỗi ngày bên em</p>
+        </div>
+
+        <div class="promises-grid" id="promisesGrid">
+          <!-- Rendered dynamically from config.js -->
+        </div>
+      </div>
+
+      <!-- 6. NÚT CHẠM ĐỂ GỬI TÌNH YÊU (INTERACTIVE HEART BURST) -->
+      <div class="heart-tap-box glass-panel">
+        <div class="tap-heart-icon" id="interactiveHeartBtn" title="Chạm nhiều lần để gửi tim!">
+          <i data-lucide="heart"></i>
+        </div>
+        <h4>Gửi ngàn nụ hôn & trái tim cho em</h4>
+        <p>Đã gửi <strong id="heartCount">300</strong> trái tim yêu thương ❤️</p>
+        <span class="tap-hint">Bấm vào trái tim để tạo hiệu ứng tim bay bùng nổ!</span>
+      </div>
+
+    </section>
+
+  </main>
+
+  <!-- MODAL LIGHTBOX XEM ẢNH POLAROID LỚN -->
+  <div class="lightbox-modal" id="lightboxModal" aria-hidden="true">
+    <div class="lightbox-backdrop" id="lightboxBackdrop"></div>
+    <div class="lightbox-dialog">
+      <button class="lightbox-close" id="lightboxCloseBtn" aria-label="Đóng ảnh">&times;</button>
+      <div class="lightbox-img-wrap">
+        <img src="" alt="Ảnh kỷ niệm" id="lightboxImg">
+      </div>
+      <p class="lightbox-caption" id="lightboxCaption"></p>
+    </div>
+  </div>
+
+  <!-- FOOTER LÃNG MẠN -->
+  <footer class="romantic-footer">
+    <div class="footer-heart"><i data-lucide="heart-handshake"></i></div>
+    <p class="footer-text">Kỷ Niệm 300 Ngày Yêu • Mãi Mãi Một Tình Yêu Đẹp</p>
+    <p class="footer-sub">Designed with all my heart for <span id="footerPartnerName">Em Yêu</span></p>
+  </footer>
+
+  <!-- Cấu hình dữ liệu và Script điều khiển -->
+  <script src="config.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
